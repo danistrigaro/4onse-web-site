@@ -40,14 +40,10 @@ const AppFooter = React.createClass({
     return (
       <Grid style={styleGrid} >
         <Row style={{backgroundColor: '#333'}} >
-          <Col md={4} xs={4}>
-          </Col>
-          <Col md={4} xs={4}>
+          <Col md={12}>
             <img style={styleSocial} src={Twitter} />
             <img style={styleSocial} src={Linkedin} />
             <img style={styleSocial} src={GitHub} />
-          </Col>
-          <Col md={4} xs={4}>
           </Col>
         </Row>
         <Row>

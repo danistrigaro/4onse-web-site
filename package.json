@@ -1,0 +1,34 @@
+{
+  "name": "test",
+  "version": "0.1.0",
+  "private": true,
+  "devDependencies": {
+    "react-scripts": "0.6.1"
+  },
+  "dependencies": {
+    "axios": "^0.15.0",
+    "bootstrap": "^3.3.7",
+    "material-ui": "^0.15.4",
+    "react": "^15.3.2",
+    "react-bootstrap": "^0.30.5",
+    "react-dom": "^15.3.2",
+    "react-parallax": "^0.4.5",
+    "react-redux": "^4.4.5",
+    "react-router": "^2.8.1",
+    "react-search-input": "^0.10.3",
+    "react-tap-event-plugin": "^1.0.0",
+    "redux": "^3.6.0",
+    "redux-devtools": "^3.3.1",
+    "redux-logger": "^2.7.0",
+    "redux-thunk": "^2.1.0",
+    "scroll-into-view": "^1.7.1"
+  },
+  "homepage": "http://danistrigaro.github.io/4onse/build",
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  },
+  "proxy": "http://localhost:8888"
+}

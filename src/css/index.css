@@ -1,0 +1,76 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Armata, sans-serif;
+}
+
+@keyframes heartbeat {
+ 0% {
+    color: rgba(255, 255, 255, 1);
+ }
+ 90% {
+    color: rgba(255,255,255,0.0);
+ }
+ 100% {
+    color: rgba(255,255,255,1.0);
+ }
+
+}
+
+/* app toolbar */
+.appToolbar svg {
+  fill: black!important;
+}
+
+/* paragraph */
+.paragraph {
+  margin-top:20px;
+  margin-bottom:20px;
+}
+
+/* parteners page */
+.card img {
+  width: auto!important;
+  border-radius: 0px!important;
+}
+
+/* search */
+.search-input {
+  padding: 10px 10px;
+  height: 52px;
+  position: relative;
+}
+
+.search-input::before {
+  content: "\26b2";
+  display: block;
+  position: absolute;
+  width: 15px;
+  z-index: 3;
+  height: 15px;
+  transform: rotate(-45deg);
+  font-size: 20px;
+  top: 11px;
+  left: 13px;
+  line-height: 32px;
+}
+
+.search-input > input {
+  width: 100%;
+  font-size: 18px;
+  border: none;
+  line-height: 22px;
+  padding: 5px 10px 5px 25px;
+  height: 32px;
+  position: relative;
+}
+
+.search-input > input:focus {
+  outline: none;
+}
+
+/* footer */
+.footer {
+  position: absolute;
+  bottom: 0;
+}

@@ -1,7 +1,7 @@
 // react
 import React from 'react';
 // react router
-import {browserHistory} from 'react-router'
+import {hashHistory} from 'react-router'
 //scroll
 var scrollIntoView = require('scroll-into-view');
 //loghi
@@ -52,7 +52,8 @@ const AppToolbar = React.createClass({
     this.setState({open: !this.state.open})
   },
   handleClick (location, value, event) {
-    browserHistory.push(value)
+    console.log(value);
+    hashHistory.push(value)
     /*if (location.pathname==='/') {
       scrollIntoView(document.getElementById(value))
     } else {

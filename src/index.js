@@ -3,7 +3,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 
 //react-router
-import { Router, Route, IndexRoute, browserHistory } from 'react-router'
+import { Router, Route, IndexRoute, hashHistory } from 'react-router'
 //containers
 import AppContainer from './containers/appContainer';
 // bootstrap
@@ -36,7 +36,7 @@ const muiTheme = getMuiTheme({
 
 ReactDOM.render(
   <MuiThemeProvider muiTheme={muiTheme}>
-    <Router history={browserHistory}>
+    <Router history={hashHistory}>
       <Route path='/' component={AppContainer} >
         <IndexRoute component={Home}/>
         <Route path='project'>

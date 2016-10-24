@@ -1,7 +1,7 @@
 // react
 import React from 'react'
 // react-router
-import {browserHistory} from 'react-router'
+import {hashHistory} from 'react-router'
 
 //bootstrap
 import Grid from 'react-bootstrap/lib/Grid'
@@ -32,7 +32,7 @@ import gfdrrLogo from "../data/images/partners/gfdrr_logo.png"
 
 const Home = React.createClass({
   handleButtonClick (value, event) {
-    browserHistory.push(value)
+    hashHistory.push(value)
   },
   render () {
     let styleCarouselButton = {

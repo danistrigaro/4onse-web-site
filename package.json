@@ -23,7 +23,7 @@
     "redux-thunk": "^2.1.0",
     "scroll-into-view": "^1.7.1"
   },
-  "homepage": "http://danistrigaro.github.io/4onse/build",
+  "homepage": "http://danistrigaro.github.io/4onse-web-site/build",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",

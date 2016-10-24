@@ -108,7 +108,7 @@ const Contact = React.createClass({
           <Divider />
           <SearchInput className="search-input" onChange={this.searchUpdated} />
           {filteredContacts.map((contact, index) => (
-            <Card style={{textAlign:'left'}}>
+            <Card style={{textAlign:'left'}} key={'key-contact-card-'+index}>
               <CardHeader
                 title={contact.name}
                 subtitle={contact.role}

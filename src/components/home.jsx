@@ -31,7 +31,7 @@ import irriLogo from "../data/images/partners/irri_logo.png"
 import gfdrrLogo from "../data/images/partners/gfdrr_logo.png"
 
 const Home = React.createClass({
-  handleButtonClick (location, value, event) {
+  handleButtonClick (value, event) {
     browserHistory.push(value)
   },
   render () {
@@ -68,7 +68,7 @@ const Home = React.createClass({
               <h3>The 4ONSE project</h3>
               <p>4 times open & non-conventional technology for</p>
               <p style={{animation: 'heartbeat 1s infinite'}}>SENSING THE ENVIRONMENT</p>
-              <RaisedButton label="Read more" />
+              <RaisedButton label="Read more" onClick={this.handleButtonClick.bind(this, '/project/introduction')}/>
             </Carousel.Caption>
           </Carousel.Item>
           <Carousel.Item style={styleCarouselItem}>
@@ -76,7 +76,7 @@ const Home = React.createClass({
             <Carousel.Caption style={styleCarouselCaption}>
               <h3>BACKGROUND</h3>
               <p>Non-conventional monitoring system based on low cost and open technologies may be a great opportunity</p>
-              <RaisedButton label="Read more" />
+              <RaisedButton label="Read more" onClick={this.handleButtonClick.bind(this, '/project/background')}/>
             </Carousel.Caption>
           </Carousel.Item>
           <Carousel.Item style={styleCarouselItem}>
@@ -84,7 +84,7 @@ const Home = React.createClass({
             <Carousel.Caption style={styleCarouselCaption}>
               <h3>OBJECTIVE OF THE PROJECT</h3>
               <p>Integrating and further developing the available technologies to implement a fully open (data, standard, hardware and software) solution</p>
-              <RaisedButton label="Read more" />
+              <RaisedButton label="Read more" onClick={this.handleButtonClick.bind(this, '/project/objective')}/>
             </Carousel.Caption>
           </Carousel.Item>
           <Carousel.Item style={styleCarouselItem}>
@@ -92,7 +92,7 @@ const Home = React.createClass({
             <Carousel.Caption style={styleCarouselCaption}>
               <h3>CHANGES AND IMPACTS</h3>
               <p>The ultimate desired impact is to strengthen the capacity of data production, usage and management in developing countries.</p>
-              <RaisedButton label="Read more" />
+              <RaisedButton label="Read more" onClick={this.handleButtonClick.bind(this, '/project/impacts')}/>
             </Carousel.Caption>
           </Carousel.Item>
           <Carousel.Item style={styleCarouselItem}>
@@ -100,7 +100,7 @@ const Home = React.createClass({
             <Carousel.Caption style={styleCarouselCaption}>
               <h3>PARTNERS & COLLABORATIONS</h3>
               <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
-              <RaisedButton label="Read more" />
+              <RaisedButton label="Read more" onClick={this.handleButtonClick.bind(this, '/partners')}/>
             </Carousel.Caption>
           </Carousel.Item>
         </Carousel>

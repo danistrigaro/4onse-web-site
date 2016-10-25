@@ -56,7 +56,7 @@ const Contact = React.createClass({
       },
       {
         name: 'Dr. Marcus Hoffmann',
-        role: 'Project manager',
+        role: 'Communication manager',
         partner: 'SUPSI',
         address: <p>Institute of earth sciences<br/><em>Trevano - Blocco C Via Trevano, 6952 Canobbio</em></p>,
         avatar: maxi,

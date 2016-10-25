@@ -2,8 +2,6 @@
 import React from 'react';
 // react router
 import {hashHistory} from 'react-router'
-//scroll
-var scrollIntoView = require('scroll-into-view');
 //loghi
 import FouronseLogo from '../data/icons/4ONSE_logo.png'
 

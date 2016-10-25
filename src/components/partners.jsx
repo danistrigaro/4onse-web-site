@@ -39,26 +39,26 @@ const Partners = React.createClass({
     const tilesData = [
       {
         img: logoSupsi,
-        title: <strong>SUPSI - <em> Main Partner</em></strong>,
-        subtitle: <p>Institute of earth sciences<br/><em>Trevano - Blocco C Via Trevano, 6952 Canobbio</em></p>,
+        title: <strong>SUPSI - The University of Applied Sciences and Arts of Southern Switzerland (<em>Main Partner</em>)</strong>,
+        subtitle: <p><strong>Institute of earth sciences</strong>, <em>Trevano - Blocco C Via Trevano, 6952 Canobbio</em></p>,
         url: 'http://www.supsi.ch/ist_en/'
       },
       {
         img: logoUoM,
-        title: <strong>UoM</strong>,
-        subtitle: <p>Institute of earth sciences<br/><em>Bandaranayake Mawatha, Katubedda, Moratuwa 10400, Sri Lanka</em></p>,
+        title: <strong>UoM - University of Moratuwa</strong>,
+        subtitle: <p><em>Bandaranayake Mawatha, Katubedda, Moratuwa 10400, Sri Lanka</em></p>,
         url: 'https://www.mrt.ac.lk/web/'
       },
       {
         img: logoIst,
-        title: <strong>IST</strong>,
+        title: <strong>IST - Institute of Space Technology</strong>,
         subtitle: <p><em>1, Islamabad Highway, Islamabad 44000</em></p>,
         url: 'http://www.ist.edu.pk/'
       },
       {
         img: logoUgm,
-        title: <strong>UGM</strong>,
-        subtitle: <p>Universitas Gadjah Mada<br/><em>Bulaksumur, Yogyakarta,Indonesia 55281</em></p>,
+        title: <strong>UGM - Universitas Gadjah Mada</strong>,
+        subtitle: <p><em>Bulaksumur, Yogyakarta,Indonesia 55281</em></p>,
         url: 'http://ugm.ac.id/en/'
       },
     ];

@@ -16,7 +16,7 @@ import injectTapEventPlugin from 'react-tap-event-plugin';
 //css
 import './css/index.css';
 
-//pages
+//components-pages
 import Home from './components/home';
 import Partners from './components/partners';
 import Outreach from './components/outreach';

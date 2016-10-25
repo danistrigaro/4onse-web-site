@@ -44,7 +44,7 @@ const Contact = React.createClass({
     }
     let contactsData = [
       {
-        name: 'Prof. Massimiliano Cannata',
+        name: 'Prof. Dr. Massimiliano Cannata',
         role: 'Project manager',
         partner: 'SUPSI',
         address: <p>Institute of earth sciences<br/><em>Trevano - Blocco C Via Trevano, 6952 Canobbio</em></p>,
@@ -55,7 +55,7 @@ const Contact = React.createClass({
         Aliquam dui mauris, mattis quis lacus id, pellentesque lobortis odio.</p>
       },
       {
-        name: 'Dott. Marcus Hoffmann',
+        name: 'Dr. Marcus Hoffmann',
         role: 'Project manager',
         partner: 'SUPSI',
         address: <p>Institute of earth sciences<br/><em>Trevano - Blocco C Via Trevano, 6952 Canobbio</em></p>,
@@ -77,7 +77,7 @@ const Contact = React.createClass({
         Aliquam dui mauris, mattis quis lacus id, pellentesque lobortis odio.</p>
       },
       {
-        name: 'Dott. Mirko Cardoso',
+        name: 'Mirko Cardoso',
         role: 'Software developer',
         partner: 'SUPSI',
         address: <p>Institute of earth sciences<br/><em>Trevano - Blocco C Via Trevano, 6952 Canobbio</em></p>,
@@ -88,7 +88,7 @@ const Contact = React.createClass({
         Aliquam dui mauris, mattis quis lacus id, pellentesque lobortis odio.</p>
       },
       {
-        name: 'Dott. Daniele Strigaro',
+        name: 'Dr. Daniele Strigaro',
         role: 'Researcher',
         partner: 'SUPSI',
         address: <p>Institute of earth sciences<br/><em>Trevano - Blocco C Via Trevano, 6952 Canobbio</em></p>,

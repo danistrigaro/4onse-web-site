@@ -107,7 +107,7 @@ const Home = React.createClass({
         </Carousel>
         <Grid style={{width:this.props.size.width+'px', paddingBottom:'57px', paddingTop:'57px'}}>
           <Row >
-            <Col md={3} sm={6} xs={6}>
+            <Col md={3} sm={6}>
               <div>
                 <figure >
                   <img src={openSoftware} style={styleImg} alt="Team Member" />
@@ -122,7 +122,7 @@ const Home = React.createClass({
                 </figure>
               </div>
             </Col>
-            <Col md={3} sm={6} xs={6}>
+            <Col md={3} sm={6}>
               <div>
                 <figure>
                   <img src={openHardware} style={styleImg} alt="Team Member" />
@@ -137,7 +137,7 @@ const Home = React.createClass({
                 </figure>
               </div>
             </Col>
-            <Col md={3} sm={6} xs={6}>
+            <Col md={3} sm={6}>
               <div>
                 <figure>
                   <img src={openStandard} style={styleImg} alt="Team Member" />
@@ -152,7 +152,7 @@ const Home = React.createClass({
                 </figure>
               </div>
             </Col>
-            <Col md={3} sm={6} xs={6}>
+            <Col md={3} sm={6}>
               <div>
                 <figure>
                   <img src={openData} style={styleImg} alt="Team Member" />

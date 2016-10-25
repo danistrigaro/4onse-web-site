@@ -39,7 +39,7 @@ const Partners = React.createClass({
     const tilesData = [
       {
         img: logoSupsi,
-        title: <strong>SUPSI - The University of Applied Sciences and Arts of Southern Switzerland (<em>Main Partner</em>)</strong>,
+        title: <strong>SUPSI - The University of Applied Sciences and Arts of Southern Switzerland<br/><em style={{fontSize:'11px'}}>Main Partner</em></strong>,
         subtitle: <p><strong>Institute of earth sciences</strong>, <em>Trevano - Blocco C Via Trevano, 6952 Canobbio</em></p>,
         url: 'http://www.supsi.ch/ist_en/'
       },
@@ -72,12 +72,13 @@ const Partners = React.createClass({
           {tilesData.map((tile, index) => (
             <div key={'list-card-'+index}>
               <ListItem
-                rightAvatar={<Avatar src={tile.img} />}
-                primaryText={tile.title}
+
+                primaryText={<div><p><img style={{height:'45px'}} src={tile.img} /></p><p>{tile.title}</p></div>}
                 secondaryText={tile.subtitle}
                 onClick={this.handleClickHref.bind(this,tile.url)}
                 className='card'
               />
+              <Divider />
             </div>
           ))}
           </List>

@@ -45,7 +45,7 @@ const AppFooter = React.createClass({
             <a href='https://twitter.com/4onseproject' target='_blank'>
               <img style={styleSocial} src={Twitter} />
             </a>
-            <a href='' target='_blank'>
+            <a href='https://www.linkedin.com/in/ist-supsi-366a45130' target='_blank'>
               <img style={styleSocial} src={Linkedin} />
             </a>
             <a href='https://github.com/4onse/' target='_blank'>

@@ -100,7 +100,7 @@ const Home = React.createClass({
             <img style={styleCarouselItemImg} alt="900x500" src={partners}/>
             <Carousel.Caption style={styleCarouselCaption}>
               <h3>PARTNERS & COLLABORATIONS</h3>
-              <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+              <p></p>
               <RaisedButton label="Read more" onClick={this.handleButtonClick.bind(this, '/partners')}/>
             </Carousel.Caption>
           </Carousel.Item>

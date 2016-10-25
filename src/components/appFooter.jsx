@@ -21,7 +21,7 @@ const AppFooter = React.createClass({
   render () {
     let size = this.props.size
     let style = {
-      height: '54px',
+      maxHeight: '54px',
     }
 
     let styleSocial = {
@@ -36,14 +36,21 @@ const AppFooter = React.createClass({
       styleGrid = {
         width:this.props.size.width+'px',
       }
+      style.width = '100%'
     }
     return (
       <Grid style={styleGrid} >
         <Row style={{backgroundColor: '#333'}} >
           <Col md={12}>
-            <img style={styleSocial} src={Twitter} />
-            <img style={styleSocial} src={Linkedin} />
-            <img style={styleSocial} src={GitHub} />
+            <a href='https://twitter.com/4onseproject' target='_blank'>
+              <img style={styleSocial} src={Twitter} />
+            </a>
+            <a href='' target='_blank'>
+              <img style={styleSocial} src={Linkedin} />
+            </a>
+            <a href='https://github.com/4onse/' target='_blank'>
+              <img style={styleSocial} src={GitHub} />
+            </a>
           </Col>
         </Row>
         <Row>

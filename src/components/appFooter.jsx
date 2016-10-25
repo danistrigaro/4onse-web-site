@@ -53,8 +53,8 @@ const AppFooter = React.createClass({
             </a>
           </Col>
         </Row>
-        <Row>
-          <Col md={4} xs={4} style={{textAlign: 'center'}} >
+        <Row style={{paddingLeft: '24px', paddingRight: '24px'}}>
+          <Col md={4} xs={4} style={{textAlign: 'center',paddingLeft:'0px'}} >
             <a href="http://www.snf.ch" target='_BLANK'>
               <img
                 className="img-responsive"
@@ -74,7 +74,7 @@ const AppFooter = React.createClass({
             />
             </a>
           </Col>
-          <Col md={4} xs={4} style={{textAlign: 'center'}} >
+          <Col md={4} xs={4} style={{textAlign: 'center',}} >
             <a href="https://www.eda.admin.ch/sdc" target='_BLANK'>
               <img role="presentation" className="img-responsive" src={sdcLogo}
               style={{maxHeight: '54px',padding:'5px'}}

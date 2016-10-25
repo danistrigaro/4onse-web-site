@@ -18,6 +18,7 @@ import NotificationSync from 'material-ui/svg-icons/notification/sync';
 import CommunicationContactMail from 'material-ui/svg-icons/communication/contact-mail';
 import {List, ListItem} from 'material-ui/List';
 import Drawer from 'material-ui/Drawer';
+import NavigationClose from 'material-ui/svg-icons/navigation/close';
 
 //css
 import '../css/toolbar.css'
@@ -83,7 +84,7 @@ const AppToolbar = React.createClass({
         >
           <Drawer
             docked={false}
-            width={200}
+
             open={this.state.open}
             onRequestChange={(open) => this.setState({open})}
           >
@@ -174,10 +175,11 @@ const AppToolbar = React.createClass({
       };
       return (
         <AppBar
-          title={<img role="presentation" src={FouronseLogo} style={{height: '45px'}}/>}
+          title=''
+          iconElementLeft={<img role="presentation" src={FouronseLogo} style={{height: '45px'}}/>}
           titleStyle={{color:'#333'}}
           style={{position: 'fixed', width:width+'px', backgroundColor:'#FFF', boxShadow: 'rgba(0, 0, 0, 0.66) 0px 1px 6px, rgba(0, 0, 0, 0.74) 0px 1px 4px', zIndex: 2000}}
-          showMenuIconButton={false}
+          iconStyleLeft={{marginLeft:'0px'}}
         >
           <FlatButton style={styleButton} onClick={this.handleClick.bind(this, this.props.location, '/')} label="HOME" />
           <IconMenu

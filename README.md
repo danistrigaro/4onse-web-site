@@ -8,6 +8,8 @@ cd 4onse-web-site
 
 npm install
 
+**Development**
 npm start
 
+**Build the website**
 npm run build

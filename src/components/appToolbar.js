@@ -89,6 +89,7 @@ const AppToolbar = React.createClass({
     if (value==='/partners') {
       hashHistory.push(value)
     } else {
+      hashHistory.push(`/project/${value}`);
       scrollIntoView(document.getElementById(value));
     }
   },

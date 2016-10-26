@@ -130,7 +130,7 @@ const AppToolbar = React.createClass({
               />
               <ListItem
                 leftIcon={<ActionDescription />}
-                primaryText="The project"
+                primaryText="Project"
                 primaryTogglesNestedList={true}
                 nestedItems={[
                   <ListItem

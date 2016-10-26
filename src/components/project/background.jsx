@@ -21,7 +21,7 @@ const Background = React.createClass({
       height:((heightCarousel*3)/4)+'px'
     }
     return (
-      <div id='page-top'>
+      <div id='background'>
         <div style={styleCarouselItem}></div>
         <div className='container'>
           <h2 className='title-page'>Background</h2>

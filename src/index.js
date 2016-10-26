@@ -22,11 +22,7 @@ import Partners from './components/partners';
 import Outreach from './components/outreach';
 import Cooperation from './components/cooperation';
 import Contact from './components/contact';
-import Introduction from './components/project/introduction';
-import Background from './components/project/background';
-import Objective from './components/project/objective';
-import Partecipate from './components/project/partecipate';
-import Impacts from './components/project/impacts';
+import Project from './components/project';
 
 injectTapEventPlugin();
 
@@ -39,14 +35,7 @@ ReactDOM.render(
     <Router history={hashHistory}>
       <Route path='/' component={AppContainer} >
         <IndexRoute component={Home}/>
-        <Route path='project'>
-          <Route path='introduction' component={Introduction} />
-          <Route path='background' component={Background} />
-          <Route path='objective' component={Objective} />
-          <Route path='impacts' component={Impacts} />
-          <Route path='partners' component={Partners} />
-          <Route path='partecipate' component={Partecipate} />
-        </Route>
+        <Route path='project/:value' component={Project}/>
         <Route path='partners' component={Partners} />
         <Route path='outreach' component={Outreach} />
         <Route path='cooperation' component={Cooperation} />

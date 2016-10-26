@@ -21,7 +21,7 @@ const Objective = React.createClass({
       height:((heightCarousel*3)/4)+'px'
     }
     return (
-      <div id='page-top'>
+      <div id='objective'>
         <div style={styleCarouselItem}></div>
         <div className='container'>
           <h2 className='title-page'>Objective</h2>

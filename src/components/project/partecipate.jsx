@@ -21,7 +21,7 @@ const Partecipate = React.createClass({
       height:((heightCarousel*3)/4)+'px'
     }
     return (
-      <div id='page-top'>
+      <div id='partecipate'>
         <div style={styleCarouselItem}></div>
         <div className='container'>
           <h2 className='title-page'>Partecipate</h2>

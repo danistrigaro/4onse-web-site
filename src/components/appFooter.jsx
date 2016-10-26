@@ -31,12 +31,15 @@ const AppFooter = React.createClass({
     }
     let styleGrid = {
       width:this.props.size.width+'px',
+      position: 'fixed',
+      bottom:'0',
+      height:'114px',
+      overflow: 'hidden'
     }
     if (size.width<750) {
       styleGrid = {
         width:this.props.size.width+'px',
       }
-      style.width = '100%'
     }
     return (
       <Grid style={styleGrid} >
@@ -53,31 +56,31 @@ const AppFooter = React.createClass({
             </a>
           </Col>
         </Row>
-        <Row style={{paddingLeft: '24px', paddingRight: '24px'}}>
-          <Col md={4} xs={4} style={{textAlign: 'center',paddingLeft:'0px'}} >
+        <Row style={{backgroundColor:'white'}}>
+          <Col md={4} sm={4} style={{textAlign: 'center',paddingLeft:'0px'}} >
             <a href="http://www.snf.ch" target='_BLANK'>
               <img
-                className="img-responsive"
                 role="presentation"
                 src={snfLogo}
                 style={style}
               />
             </a>
           </Col>
-          <Col md={4} xs={4} style={{textAlign: 'center'}} >
+          <Col md={4} sm={4} style={{textAlign: 'center'}} >
             <a href="http://www.r4d.ch" target='_BLANK'>
             <img
-              className="img-responsive"
               role="presentation"
               src={rd4Logo}
               style={style}
             />
             </a>
           </Col>
-          <Col md={4} xs={4} style={{textAlign: 'center',}} >
+          <Col md={4} sm={4} style={{textAlign: 'center',}} >
             <a href="https://www.eda.admin.ch/sdc" target='_BLANK'>
-              <img role="presentation" className="img-responsive" src={sdcLogo}
-              style={{maxHeight: '54px',padding:'5px'}}
+              <img
+                role="presentation"
+                src={sdcLogo}
+                style={{maxHeight: '54px',padding:'5px'}}
               />
             </a>
           </Col>

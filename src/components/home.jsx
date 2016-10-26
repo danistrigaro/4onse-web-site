@@ -32,7 +32,11 @@ import gfdrrLogo from "../data/images/partners/gfdrr_logo.png"
 
 const Home = React.createClass({
   handleButtonClick (value, event) {
-    hashHistory.push(value)
+    if (value==='partners') {
+      hashHistory.push(`/${value}`);
+    } else {
+      hashHistory.push(`/project/${value}`);
+    }
   },
   render () {
     let styleCarouselButton = {
@@ -57,11 +61,8 @@ const Home = React.createClass({
       styleCarouselTitle.fontSize = '20px'
       styleCarouselItemImg = {width: '100%'}
     }
-    let heightRow = (this.props.size.height - (heightCarousel+64+114))
+    let heightRow = (this.props.size.height - (heightCarousel+100+114))
     let styleCarouselItem = {height:heightCarousel}
-    let styleImg = {
-      padding: '15px',
-    }
     return (
       <div id="page-top" style={{textAlign:'center'}}>
         <Carousel>
@@ -71,7 +72,7 @@ const Home = React.createClass({
               <h3 style={styleCarouselTitle}>The 4ONSE project</h3>
               <p>4 times open & non-conventional technology for</p>
               <p style={{animation: 'heartbeat 1s infinite'}}>SENSING THE ENVIRONMENT</p>
-              <RaisedButton label="Read more" onClick={this.handleButtonClick.bind(this, '/project/introduction')}/>
+              <RaisedButton label="Read more" onClick={this.handleButtonClick.bind(this, 'introduction')}/>
             </Carousel.Caption>
           </Carousel.Item>
           <Carousel.Item style={styleCarouselItem}>
@@ -79,7 +80,7 @@ const Home = React.createClass({
             <Carousel.Caption style={styleCarouselCaption}>
               <h3 style={styleCarouselTitle}>BACKGROUND</h3>
               <p>Non-conventional monitoring system based on low cost and open technologies may be a great opportunity</p>
-              <RaisedButton label="Read more" onClick={this.handleButtonClick.bind(this, '/project/background')}/>
+              <RaisedButton label="Read more" onClick={this.handleButtonClick.bind(this, 'background')}/>
             </Carousel.Caption>
           </Carousel.Item>
           <Carousel.Item style={styleCarouselItem}>
@@ -87,7 +88,7 @@ const Home = React.createClass({
             <Carousel.Caption style={styleCarouselCaption}>
               <h3 style={styleCarouselTitle}>OBJECTIVE OF THE PROJECT</h3>
               <p>Integrating and further developing the available technologies to implement a fully open (data, standard, hardware and software) solution</p>
-              <RaisedButton label="Read more" onClick={this.handleButtonClick.bind(this, '/project/objective')}/>
+              <RaisedButton label="Read more" onClick={this.handleButtonClick.bind(this, 'objective')}/>
             </Carousel.Caption>
           </Carousel.Item>
           <Carousel.Item style={styleCarouselItem}>
@@ -95,7 +96,7 @@ const Home = React.createClass({
             <Carousel.Caption style={styleCarouselCaption}>
               <h3 style={styleCarouselTitle}>CHANGES AND IMPACTS</h3>
               <p>The ultimate desired impact is to strengthen the capacity of data production, usage and management in developing countries.</p>
-              <RaisedButton label="Read more" onClick={this.handleButtonClick.bind(this, '/project/impacts')}/>
+              <RaisedButton label="Read more" onClick={this.handleButtonClick.bind(this, 'impacts')}/>
             </Carousel.Caption>
           </Carousel.Item>
           <Carousel.Item style={styleCarouselItem}>
@@ -103,16 +104,16 @@ const Home = React.createClass({
             <Carousel.Caption style={styleCarouselCaption}>
               <h3 style={styleCarouselTitle}>PARTNERS & COLLABORATIONS</h3>
               <p></p>
-              <RaisedButton label="Read more" onClick={this.handleButtonClick.bind(this, '/partners')}/>
+              <RaisedButton label="Read more" onClick={this.handleButtonClick.bind(this, 'partners')}/>
             </Carousel.Caption>
           </Carousel.Item>
         </Carousel>
-        <Grid style={{width:this.props.size.width+'px', paddingBottom:'10px', paddingTop:'0px'}}>
-          <Row >
+        <Grid style={{width:this.props.size.width+'px', height: heightRow, display: 'table',paddingTop:'10px', paddingBottom:'10px'}}>
+          <Row style={{verticalAlign: 'middle', display:'table-cell'}}>
             <Col md={3} sm={3}>
               <div>
                 <figure >
-                  <img src={openSoftware} style={styleImg} alt="Team Member" />
+                  <img src={openSoftware} alt="Team Member" />
                   <figcaption>
                     <p>
                       <strong>IstSOS</strong>
@@ -127,7 +128,7 @@ const Home = React.createClass({
             <Col md={3} sm={3}>
               <div>
                 <figure>
-                  <img src={openHardware} style={styleImg} alt="Team Member" />
+                  <img src={openHardware} alt="Team Member" />
                   <figcaption>
                     <p>
                       <strong>Arduino</strong>
@@ -142,7 +143,7 @@ const Home = React.createClass({
             <Col md={3} sm={3}>
               <div>
                 <figure>
-                  <img src={openStandard} style={styleImg} alt="Team Member" />
+                  <img src={openStandard} alt="Team Member" />
                   <figcaption>
                     <p>
                       <strong>OGC SOS</strong>
@@ -157,7 +158,7 @@ const Home = React.createClass({
             <Col md={3} sm={3}>
               <div>
                 <figure>
-                  <img src={openData} style={styleImg} alt="Team Member" />
+                  <img src={openData} alt="Team Member" />
                   <figcaption>
                     <p>
                       <strong>CKAN</strong>

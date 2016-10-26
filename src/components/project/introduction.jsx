@@ -23,7 +23,7 @@ const Introduction = React.createClass({
       height:((heightCarousel*3)/4)+'px'
     }
     return (
-      <div id='page-top'>
+      <div id='introduction'>
         <div style={styleCarouselItem}></div>
         <div className='container'>
           <h2 className='title-page'>Introduction</h2>
@@ -52,14 +52,12 @@ const Introduction = React.createClass({
             (<em>GSMA, 2014</em>).
           </p>
           <h3>References</h3>
-          <p className='paragraph'>
-            <ul>
-              <li><em>Coetzee, L., & Eksteen, J. (2011, May). The Internet of Things-promise for the future? An introduction. In IST-Africa Conference Proceedings, 2011 (pp. 1-9). IEEE.</em></li>
-              <li><em>Evans, D. (2011). The internet of things: how the next evolution of the internet is changing everything. CISCO white paper, 1.</em></li>
-              <li><em>Snow, J.T. (2013). Non-traditional Approaches to Weather Observations in Developing Countries. International Finance Corporation. Available online at: <a href='http://www.ifc.org/wps/wcm/connect/91c3778042bd94eeb2c6be0dc33b630b/NonTraditional+Approaches+to+Weather+Observations+in+Developing+Countries+-+John+Snow.pdf?MOD=AJPERES' target='_blank'>Link</a> [consulted on January 2015]</em></li>
-              <li><em>GSMA (2014). The Mobile Economy 2014 GSMA 2014. Available online at:<a href='http://www.gsmamobileeconomy.com/GSMA_ME_Report_2014_R2_WEB.pdf' target='_blank'>Link</a> [consulted on January 2015]</em></li>
-            </ul>
-          </p>
+          <ul className='paragraph'>
+            <li><em>Coetzee, L., & Eksteen, J. (2011, May). The Internet of Things-promise for the future? An introduction. In IST-Africa Conference Proceedings, 2011 (pp. 1-9). IEEE.</em></li>
+            <li><em>Evans, D. (2011). The internet of things: how the next evolution of the internet is changing everything. CISCO white paper, 1.</em></li>
+            <li><em>Snow, J.T. (2013). Non-traditional Approaches to Weather Observations in Developing Countries. International Finance Corporation. Available online at: <a href='http://www.ifc.org/wps/wcm/connect/91c3778042bd94eeb2c6be0dc33b630b/NonTraditional+Approaches+to+Weather+Observations+in+Developing+Countries+-+John+Snow.pdf?MOD=AJPERES' target='_blank'>Link</a> [consulted on January 2015]</em></li>
+            <li><em>GSMA (2014). The Mobile Economy 2014 GSMA 2014. Available online at:<a href='http://www.gsmamobileeconomy.com/GSMA_ME_Report_2014_R2_WEB.pdf' target='_blank'>Link</a> [consulted on January 2015]</em></li>
+          </ul>
         </div>
       </div>
     )

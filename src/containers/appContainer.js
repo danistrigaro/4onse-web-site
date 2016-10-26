@@ -16,6 +16,9 @@ const AppContainer = React.createClass({
       size: {
         width: 0,
         height: 0
+      },
+      appBar: {
+        height: 100
       }
     }
   },
@@ -43,6 +46,7 @@ const AppContainer = React.createClass({
     }
   },
   componentDidMount () {
+    window.addEventListener('scroll', this.handleScroll);
     let size = this.setSize()
     this.setState({
       size: {
@@ -60,6 +64,34 @@ const AppContainer = React.createClass({
       })
     }
   },
+  handleScroll (event) {
+    let scrollTop = event.srcElement.body.scrollTop
+    let newHeight
+    if (scrollTop===0) {
+      this.setState({
+        appBar: {
+          height: 100
+        }
+      })
+    } else if (scrollTop <= 100) {
+      if (this.state.appBar.height<=100) {
+        newHeight = 100 - scrollTop
+        if (newHeight>=64) {
+          this.setState({
+            appBar: {
+              height: newHeight
+            }
+          })
+        }
+      }
+    } else {
+      this.setState({
+        appBar: {
+          height: 64
+        }
+      })
+    }
+  },
   render() {
     if (this.state.size.width>0) {
       return (
@@ -71,9 +103,9 @@ const AppContainer = React.createClass({
             link={{msg: 'Click here for more information.', url: 'http://ec.europa.eu/cookies/index_en.htm'}}
             cookie='user-has-accepted-cookies'
           />
-          <AppToolbar width={this.state.size.width} access={false}/>
-          <div style={{width: this.state.size.width}}>
-            {React.cloneElement(this.props.children, {size: this.state.size})}
+          <AppToolbar width={this.state.size.width} access={false} appBar={this.state.appBar}/>
+          <div style={{width: this.state.size.width, paddingTop:this.state.appBar.height}}>
+            {React.cloneElement(this.props.children, {size: this.state.size, appBar: this.state.appBar})}
           </div>
           <AppFooter size={this.state.size} />
         </div>
@@ -90,8 +122,8 @@ const AppContainer = React.createClass({
       };
       return (
         <div className="App">
-          <AppToolbar width={this.state.width} access={false}/>
-          <div style={style.container} >
+          <AppToolbar width={this.state.width} access={false}  appBar={this.state.appBar}/>
+          <div style={style.container}>
             <RefreshIndicator
               size={40}
               left={10}

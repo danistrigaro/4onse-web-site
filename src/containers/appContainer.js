@@ -67,29 +67,37 @@ const AppContainer = React.createClass({
   handleScroll (event) {
     let scrollTop = event.srcElement.body.scrollTop
     let newHeight
-    if (scrollTop===0) {
-      this.setState({
-        appBar: {
-          height: 100
-        }
-      })
-    } else if (scrollTop <= 100) {
-      if (this.state.appBar.height<=100) {
-        newHeight = 100 - scrollTop
-        if (newHeight>=64) {
-          this.setState({
-            appBar: {
-              height: newHeight
-            }
-          })
-        }
-      }
-    } else {
+    if (window.innerWidth<=750) {
       this.setState({
         appBar: {
           height: 64
         }
       })
+    } else {
+      if (scrollTop===0) {
+        this.setState({
+          appBar: {
+            height: 100
+          }
+        })
+      } else if (scrollTop <= 100) {
+        if (this.state.appBar.height<=100) {
+          newHeight = 100 - scrollTop
+          if (newHeight>=64) {
+            this.setState({
+              appBar: {
+                height: newHeight
+              }
+            })
+          }
+        }
+      } else {
+        this.setState({
+          appBar: {
+            height: 64
+          }
+        })
+      }
     }
   },
   render() {

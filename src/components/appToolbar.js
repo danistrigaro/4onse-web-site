@@ -118,7 +118,6 @@ const AppToolbar = React.createClass({
         >
           <Drawer
             docked={false}
-
             open={this.state.open}
             onRequestChange={(open) => this.setState({open})}
           >

@@ -58,7 +58,7 @@ const Home = React.createClass({
     } else {
       heightCarousel = (this.props.size.width/1.77)
       styleCarouselCaption.fontSize = '12px'
-      styleCarouselTitle.fontSize = '20px'
+      styleCarouselTitle.fontSize = '14px'
       styleCarouselItemImg = {width: '100%'}
     }
     let heightRow = (this.props.size.height - (heightCarousel+100+114))

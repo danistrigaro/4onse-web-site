@@ -24,7 +24,6 @@ import NotificationSync from 'material-ui/svg-icons/notification/sync';
 import CommunicationContactMail from 'material-ui/svg-icons/communication/contact-mail';
 import {List, ListItem} from 'material-ui/List';
 import Drawer from 'material-ui/Drawer';
-import NavigationClose from 'material-ui/svg-icons/navigation/close';
 //icons
 import Linkedin from '../data/icons/linkedin-logo.svg'
 import Twitter from '../data/icons/twitter.svg'
@@ -47,7 +46,7 @@ const AppToolbar = React.createClass({
     })
   },
   handleOpenMenu () {
-    hashHistory.push(`/project/${'introduction'}`);
+    hashHistory.push(`/project/${'main'}`);
     this.setState({
       openMenu: true,
     })
@@ -203,17 +202,17 @@ const AppToolbar = React.createClass({
                   <ListItem
                     onClick={this.handleClick.bind(this, 'link', 'twitter')}
                     key={3}
-                    primaryText={<div><img src={Twitter} height='20px' /> Twitter</div>}
+                    primaryText={<div><img role="presentation" src={Twitter} height='20px' /> Twitter</div>}
                   />,
                   <ListItem
                     onClick={this.handleClick.bind(this, 'link', 'linkedin')}
                     key={4}
-                    primaryText={<div><img src={Linkedin} height='20px' /> Linkedin</div>}
+                    primaryText={<div><img role="presentation" src={Linkedin} height='20px' /> Linkedin</div>}
                   />,
                   <ListItem
                     onClick={this.handleClick.bind(this, 'link', 'github')}
                     key={5}
-                    primaryText={<div><img src={GitHub} height='20px' /> Github</div>}
+                    primaryText={<div><img role="presentation" src={GitHub} height='20px' /> Github</div>}
                   />
                 ]}
               />
@@ -222,10 +221,6 @@ const AppToolbar = React.createClass({
         </AppBar>
       )
     } else {
-      let styleButton = {
-        color: '#333',
-        fontWeight: 'bold'
-      }
       const styles = {
         smallIcon: {
           width: 1,
@@ -237,8 +232,15 @@ const AppToolbar = React.createClass({
           width: 1,
           height: 1,
           padding: 0,
+        },
+        textMenu: {
+          fontSize: '14px',
+          color: '#333',
         }
       };
+      if (width<=950) {
+        styles.textMenu.fontSize='14px'
+      }
       return (
         <AppBar
           title=''
@@ -250,34 +252,34 @@ const AppToolbar = React.createClass({
           <Grid style={{margin:'auto'}}>
             <Row>
               <Col md={2} xs={2}>
-                <FlatButton style={styleButton} onClick={this.handleClick.bind(this, this.props.location, '/')} label="HOME" />
+                <FlatButton labelStyle={styles.textMenu} onClick={this.handleClick.bind(this, this.props.location, '/')} label="HOME" />
               </Col>
               <Col md={2} xs={2}>
+                <FlatButton labelStyle={styles.textMenu} onTouchTap={this.handleOpenMenu} label="Project" />
                 <IconMenu
                   iconButtonElement={<IconButton iconStyle={styles.smallIcon} style={styles.small} ><ActionHome /></IconButton>}
                   open={this.state.openMenu}
                   onRequestChange={this.handleOnRequestChange}
                 >
-                  <MenuItem style={{fontSize: '14px'}} onClick={this.handleClickMenuItem.bind(this, 'introduction')} primaryText="Introduction" />
-                  <MenuItem style={{fontSize: '14px'}} onClick={this.handleClickMenuItem.bind(this, 'background')} primaryText="Background" />
-                  <MenuItem style={{fontSize: '14px'}} onClick={this.handleClickMenuItem.bind(this, 'impacts')} primaryText="Impacts" />
-                  <MenuItem style={{fontSize: '14px'}} onClick={this.handleClickMenuItem.bind(this, 'objective')} primaryText="Objective" />
-                  <MenuItem style={{fontSize: '14px'}} onClick={this.handleClickMenuItem.bind(this, '/partners')} primaryText="Partners" />
-                  <MenuItem style={{fontSize: '14px'}} onClick={this.handleClickMenuItem.bind(this, 'partecipate')} primaryText="Partecipate" />
+                  <MenuItem style={styles.textMenu} onClick={this.handleClickMenuItem.bind(this, 'introduction')} primaryText="Introduction" />
+                  <MenuItem style={styles.textMenu} onClick={this.handleClickMenuItem.bind(this, 'background')} primaryText="Background" />
+                  <MenuItem style={styles.textMenu} onClick={this.handleClickMenuItem.bind(this, 'impacts')} primaryText="Impacts" />
+                  <MenuItem style={styles.textMenu} onClick={this.handleClickMenuItem.bind(this, 'objective')} primaryText="Objective" />
+                  <MenuItem style={styles.textMenu} onClick={this.handleClickMenuItem.bind(this, '/partners')} primaryText="Partners" />
+                  <MenuItem style={styles.textMenu} onClick={this.handleClickMenuItem.bind(this, 'partecipate')} primaryText="Partecipate" />
                 </IconMenu>
-                <FlatButton style={styleButton} onTouchTap={this.handleOpenMenu} label="Project" />
               </Col>
               <Col md={2} xs={2}>
-                <FlatButton style={styleButton} onClick={this.handleClick.bind(this, this.props.location, '/partners')} label="Partners" />
+                <FlatButton labelStyle={styles.textMenu} onClick={this.handleClick.bind(this, this.props.location, '/partners')} label="Partners" />
               </Col>
               <Col md={2} xs={2}>
-                <FlatButton style={styleButton} onClick={this.handleClick.bind(this, this.props.location, '/outreach')} label="Outreach" />
+                <FlatButton labelStyle={styles.textMenu} onClick={this.handleClick.bind(this, this.props.location, '/outreach')} label="Outreach" />
               </Col>
               <Col md={2} xs={2}>
-                <FlatButton style={styleButton} onClick={this.handleClick.bind(this, this.props.location, '/cooperation')} label="Cooperation" />
+                <FlatButton labelStyle={styles.textMenu} onClick={this.handleClick.bind(this, this.props.location, '/cooperation')} label="Cooperation" />
               </Col>
               <Col md={2} xs={2}>
-                <FlatButton style={styleButton} onClick={this.handleClick.bind(this, this.props.location, '/contact')} label="Contact" />
+                <FlatButton labelStyle={styles.textMenu} onClick={this.handleClick.bind(this, this.props.location, '/contact')} label="Contact" />
               </Col>
             </Row>
           </Grid>

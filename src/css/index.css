@@ -1,9 +1,7 @@
 body {
-  margin: 0 0 114px;
+  margin: 0 0;
   padding: 0;
   font-family: Armata, sans-serif;
-  position: relative;
-  min-height: 100%;
 }
 
 @keyframes heartbeat {
@@ -17,6 +15,22 @@ body {
     color: rgba(255,255,255,1.0);
  }
 
+}
+/* cookie banner */
+.cookie-banner {
+  position: fixed;
+  color: #F0F0F0;
+  z-index: 10000;
+  padding: 10px;
+  background-color: #484848;
+  width: 100%;
+}
+.cookie-banner a {
+  color: #ffbc00;
+}
+.cookie-banner .button-close {
+  background-color: grey;
+  font-weight: bold;
 }
 
 /* app toolbar */

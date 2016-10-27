@@ -3,14 +3,10 @@ import React from 'react'
 // material ui
 import {List, ListItem} from 'material-ui/List';
 import Divider from 'material-ui/Divider';
-import Subheader from 'material-ui/Subheader';
-import Avatar from 'material-ui/Avatar';
-import FlatButton from 'material-ui/FlatButton';
 //icons
 import logoSupsi from '../data/icons/supsi.png'
 import logoUgm from '../data/icons/ugm3.gif'
 import logoUoM from '../data/icons/uom2.png'
-import logoMoratuwa from '../data/icons/moratuwa.png'
 import logoIst from '../data/icons/ist_pk.png'
 //images
 import partners from '../data/images/background/partners.jpg'
@@ -32,9 +28,6 @@ const Partners = React.createClass({
       backgroundImage: 'url('+partners+')',
       backgroundPosition:'center',
       height:((heightCarousel*3)/4)+'px'
-    }
-    let styleAction = {
-      textAlign: 'right'
     }
     const tilesData = [
       {
@@ -73,7 +66,7 @@ const Partners = React.createClass({
             <div key={'list-card-'+index}>
               <ListItem
 
-                primaryText={<div><p><img style={{height:'45px'}} src={tile.img} /></p><p>{tile.title}</p></div>}
+                primaryText={<div><p><img role='presentation' style={{height:'45px'}} src={tile.img} /></p><p>{tile.title}</p></div>}
                 secondaryText={tile.subtitle}
                 onClick={this.handleClickHref.bind(this,tile.url)}
                 className='card'

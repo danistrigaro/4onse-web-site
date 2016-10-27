@@ -2,8 +2,6 @@
 import React from 'react'
 //material ui
 import Divider from 'material-ui/Divider';
-//bootstrap
-import ResponsiveEmbed from 'react-bootstrap/lib/ResponsiveEmbed'
 //images
 import pageTop from '../../data/images/background/page-top.jpg'
 

@@ -3,9 +3,7 @@ import React from 'react'
 // react search filter
 import SearchInput, {createFilter} from 'react-search-input'
 //materia ui
-import Paper from 'material-ui/Paper';
-import {Card, CardActions, CardHeader, CardMedia, CardTitle, CardText} from 'material-ui/Card';
-import FlatButton from 'material-ui/FlatButton';
+import {Card, CardHeader, CardTitle, CardText} from 'material-ui/Card';
 import Divider from 'material-ui/Divider';
 //icons
 import Linkedin from '../data/icons/linkedin-logo.svg'
@@ -119,9 +117,9 @@ const Contact = React.createClass({
                 {contact.description}
               </CardText>
               <CardText>
-                <img style={styleSocial} src={Twitter} />
-                <img style={styleSocial} src={Linkedin} />
-                <img style={styleSocial} src={GitHub} />
+                <img role='presentation' style={styleSocial} src={Twitter} />
+                <img role='presentation' style={styleSocial} src={Linkedin} />
+                <img role='presentation' style={styleSocial} src={GitHub} />
               </CardText>
             </Card>
           ))}

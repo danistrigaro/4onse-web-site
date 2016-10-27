@@ -46,7 +46,7 @@ const AppContainer = React.createClass({
     }
   },
   componentDidMount () {
-    window.addEventListener('scroll', this.handleScroll);
+    window.addEventListener('scroll',this.handleScroll)
     let size = this.setSize()
     this.setState({
       size: {
@@ -65,8 +65,7 @@ const AppContainer = React.createClass({
     }
   },
   handleScroll (event) {
-    let scrollTop = event.srcElement.body.scrollTop
-    let newHeight
+    let scrollTop = window.pageYOffset
     if (window.innerWidth<=750) {
       this.setState({
         appBar: {
@@ -75,47 +74,42 @@ const AppContainer = React.createClass({
       })
     } else {
       if (scrollTop===0) {
-        this.setState({
-          appBar: {
-            height: 100
-          }
-        })
-      } else if (scrollTop <= 100) {
-        if (this.state.appBar.height<=100) {
-          newHeight = 100 - scrollTop
-          if (newHeight>=64) {
-            this.setState({
-              appBar: {
-                height: newHeight
-              }
-            })
-          }
+        if (this.state.appBar.height===64) {
+          this.setState({
+            appBar: {
+              height: 100
+            }
+          })
         }
       } else {
-        this.setState({
-          appBar: {
-            height: 64
-          }
-        })
+        if (this.state.appBar.height===100) {
+          this.setState({
+            appBar: {
+              height: 64
+            }
+          })
+        }
       }
     }
   },
   render() {
     if (this.state.size.width>0) {
       return (
-        <div className="App">
+        <div id='app' className="App">
           <CookieBanner
             message={'We use cookies on this site to enhance your user experience.'}
             onAccept={() => {}}
+            disableStyle={true}
             dismissOnScroll={false}
-            link={{msg: 'Click here for more information.', url: 'http://ec.europa.eu/cookies/index_en.htm'}}
+            link={{msg: <p>Click here for more information.</p>, url: 'http://ec.europa.eu/cookies/index_en.htm'}}
             cookie='user-has-accepted-cookies'
+            className='cookie-banner'
           />
           <AppToolbar width={this.state.size.width} access={false} appBar={this.state.appBar}/>
           <div style={{width: this.state.size.width, paddingTop:this.state.appBar.height}}>
             {React.cloneElement(this.props.children, {size: this.state.size, appBar: this.state.appBar})}
           </div>
-          <AppFooter size={this.state.size} />
+          <AppFooter size={this.state.size} route={this.props.location}/>
         </div>
       )
     } else {

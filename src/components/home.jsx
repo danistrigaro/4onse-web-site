@@ -22,13 +22,6 @@ import openSoftware from '../data/images/team/open-software.svg'
 import openHardware from '../data/images/team/open-hardware.svg'
 import openStandard from '../data/images/team/open-standard.svg'
 import openData from "../data/images/team/open-data.svg"
-import supsiLogo from "../data/images/partners/supsi_logo.png"
-import uomLogo from "../data/images/partners/uom_logo.png"
-import istLogo from "../data/images/partners/ist_logo.png"
-import ugmLogo from "../data/images/partners/ugm_logo.png"
-import iwmiLogo from "../data/images/partners/iwmi_logo.png"
-import irriLogo from "../data/images/partners/irri_logo.png"
-import gfdrrLogo from "../data/images/partners/gfdrr_logo.png"
 
 const Home = React.createClass({
   handleButtonClick (value, event) {
@@ -39,9 +32,6 @@ const Home = React.createClass({
     }
   },
   render () {
-    let styleCarouselButton = {
-      margin: 12
-    }
     let styleCarouselTitle = {}
     let styleCarouselCaption = {
       textAlign:'left',
@@ -61,7 +51,7 @@ const Home = React.createClass({
       styleCarouselTitle.fontSize = '14px'
       styleCarouselItemImg = {width: '100%'}
     }
-    let heightRow = (this.props.size.height - (heightCarousel+100+114))
+    let heightRow = (this.props.size.height - (heightCarousel+this.props.appBar.height+100))
     let styleCarouselItem = {height:heightCarousel}
     return (
       <div id="page-top" style={{textAlign:'center'}}>
@@ -112,15 +102,13 @@ const Home = React.createClass({
           <Row style={{verticalAlign: 'middle', display:'table-cell'}}>
             <Col md={3} sm={3}>
               <div>
-                <figure >
+                <figure>
                   <img src={openSoftware} alt="Team Member" />
-                  <figcaption>
-                    <p>
-                      <strong>IstSOS</strong>
-                    </p>
-                    <p>
-                      Open SOftware
-                    </p>
+                  <figcaption style={{}}>
+                    <br/>
+                    <strong>IstSOS</strong>
+                    <br/>
+                    Open SOftware
                   </figcaption>
                 </figure>
               </div>
@@ -130,12 +118,10 @@ const Home = React.createClass({
                 <figure>
                   <img src={openHardware} alt="Team Member" />
                   <figcaption>
-                    <p>
-                      <strong>Arduino</strong>
-                    </p>
-                    <p>
-                      Open Hardware
-                    </p>
+                    <br/>
+                    <strong>Arduino</strong>
+                    <br/>
+                    Open Hardware
                   </figcaption>
                 </figure>
               </div>
@@ -145,12 +131,10 @@ const Home = React.createClass({
                 <figure>
                   <img src={openStandard} alt="Team Member" />
                   <figcaption>
-                    <p>
-                      <strong>OGC SOS</strong>
-                    </p>
-                    <p>
-                      Open Standard
-                    </p>
+                    <br/>
+                    <strong>OGC SOS</strong>
+                    <br/>
+                    Open Standard
                   </figcaption>
                 </figure>
               </div>
@@ -160,12 +144,10 @@ const Home = React.createClass({
                 <figure>
                   <img src={openData} alt="Team Member" />
                   <figcaption>
-                    <p>
-                      <strong>CKAN</strong>
-                    </p>
-                    <p>
-                      Open Data
-                    </p>
+                    <br/>
+                    <strong>CKAN</strong>
+                    <br/>
+                    Open Data
                   </figcaption>
                 </figure>
               </div>

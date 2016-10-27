@@ -3,8 +3,12 @@ import React from 'react'
 // react search filter
 import SearchInput, {createFilter} from 'react-search-input'
 //materia ui
-import {Card, CardHeader, CardTitle, CardText} from 'material-ui/Card';
+import {Card, CardActions, CardHeader, CardMedia, CardTitle, CardText} from 'material-ui/Card';
 import Divider from 'material-ui/Divider';
+//bootstrap
+import Grid from 'react-bootstrap/lib/Grid'
+import Row from 'react-bootstrap/lib/Row'
+import Col from 'react-bootstrap/lib/Col'
 //icons
 import Linkedin from '../data/icons/linkedin-logo.svg'
 import Twitter from '../data/icons/twitter.svg'
@@ -14,7 +18,7 @@ import contacts from '../data/images/background/contacts.jpg'
 
 const KEYS_TO_FILTERS = ['name', 'partner', 'role']
 
-const Contact = React.createClass({
+const People = React.createClass({
   getInitialState () {
     return { searchTerm: '' }
   },
@@ -129,4 +133,4 @@ const Contact = React.createClass({
   }
 })
 
-export default Contact
+export default People

@@ -100,10 +100,10 @@ const Home = React.createClass({
         </Carousel>
         <Grid className='grid-home' style={{width:this.props.size.width+'px', height: heightRow, display: 'table',paddingTop:'10px', paddingBottom:'10px'}}>
           <Row style={{verticalAlign: 'middle', display:'table-cell'}}>
-            <Col md={3} sm={3}>
+            <Col md={3} sm={6}>
               <figure>
                 <img src={openSoftware} alt="Team Member" />
-                <figcaption style={{}}>
+                <figcaption>
                   <br/>
                   <strong>IstSOS</strong>
                   <br/>
@@ -111,7 +111,7 @@ const Home = React.createClass({
                 </figcaption>
               </figure>
             </Col>
-            <Col md={3} sm={3}>
+            <Col md={3} sm={6}>
               <div>
                 <figure>
                   <img src={openHardware} alt="Team Member" />
@@ -124,7 +124,7 @@ const Home = React.createClass({
                 </figure>
               </div>
             </Col>
-            <Col md={3} sm={3}>
+            <Col md={3} sm={6}>
               <div>
                 <figure>
                   <img src={openStandard} alt="Team Member" />
@@ -137,7 +137,7 @@ const Home = React.createClass({
                 </figure>
               </div>
             </Col>
-            <Col md={3} sm={3}>
+            <Col md={3} sm={6}>
               <div>
                 <figure>
                   <img src={openData} alt="Team Member" />

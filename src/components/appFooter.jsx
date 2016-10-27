@@ -31,7 +31,7 @@ const AppFooter = React.createClass({
     }
     let styleGrid = {
       width:this.props.size.width+'px',
-      height:'100px',
+
     }
     if (size.width<750) {
       styleGrid = {

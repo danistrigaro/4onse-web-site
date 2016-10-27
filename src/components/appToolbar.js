@@ -10,6 +10,8 @@ import FouronseLogo from '../data/icons/4ONSE_logo.png'
 import Grid from 'react-bootstrap/lib/Grid'
 import Row from 'react-bootstrap/lib/Row'
 import Col from 'react-bootstrap/lib/Col'
+import Button from 'react-bootstrap/lib/Button'
+import Glyphicon from 'react-bootstrap/lib/Glyphicon'
 // material ui
 import AppBar from 'material-ui/AppBar';
 import FlatButton from 'material-ui/FlatButton';
@@ -20,6 +22,7 @@ import ActionHome from 'material-ui/svg-icons/action/home';
 import ActionDescription from 'material-ui/svg-icons/action/description';
 import ActionBookmarkBorder from 'material-ui/svg-icons/action/bookmark-border';
 import SocialGroup from 'material-ui/svg-icons/social/group';
+import LinkIcon from 'material-ui/svg-icons/content/link';
 import NotificationSync from 'material-ui/svg-icons/notification/sync';
 import CommunicationContactMail from 'material-ui/svg-icons/communication/contact-mail';
 import {List, ListItem} from 'material-ui/List';
@@ -46,14 +49,34 @@ const AppToolbar = React.createClass({
     })
   },
   handleOpenMenu () {
-    hashHistory.push(`/project/${'main'}`);
+    //hashHistory.push(`/project/${'main'}`);
     this.setState({
       openMenu: true,
+    })
+  },
+  handleOpenMenuTeam () {
+    this.setState({
+      openMenuTeam: true,
+    })
+  },
+  handleOpenMenuOutreach () {
+    this.setState({
+      openMenuOutreach: true,
     })
   },
   handleOnRequestChange (value) {
     this.setState({
       openMenu: value,
+    })
+  },
+  handleOnRequestChangeTeam (value) {
+    this.setState({
+      openMenuTeam: value,
+    })
+  },
+  handleOnRequestChangeOutreach (value) {
+    this.setState({
+      openMenuOutreach: value,
     })
   },
   handleToggle () {
@@ -153,36 +176,80 @@ const AppToolbar = React.createClass({
                     primaryText="Impacts"
                   />,
                   <ListItem
-                    onClick={this.handleClickMenuItem.bind(this, '/partners')}
+                    onClick={this.handleClick.bind(this, this.props.location, '/governance')}
                     key={5}
+                    primaryText="Governance"
+                  />,
+                  <ListItem
+                    onClick={this.handleClick.bind(this, this.props.location, '/workingpackages')}
+                    key={6}
+                    primaryText="Working packages"
+                  />,
+                  <ListItem
+                    onClick={this.handleClick.bind(this, this.props.location, '/casestudy')}
+                    key={7}
+                    primaryText="Case study"
+                  />
+                ]}
+              />
+              <ListItem
+                leftIcon={<CommunicationContactMail />}
+                primaryText="Team"
+                primaryTogglesNestedList={true}
+                nestedItems={[
+                  <ListItem
+                    onClick={this.handleClick.bind(this, this.props.location, '/partners')}
+                    key={1}
                     primaryText="Partners"
                   />,
                   <ListItem
-                    onClick={this.handleClickMenuItem.bind(this, 'partecipate')}
-                    key={6}
-                    primaryText="Partecipate"
+                    onClick={this.handleClick.bind(this, this.props.location, '/people')}
+                    key={2}
+                    primaryText="People"
+                  />,
+                  <ListItem
+                    onClick={this.handleClick.bind(this, this.props.location, '/advisoryboard')}
+                    key={3}
+                    primaryText="Advisory board"
+                  />,
+                  <ListItem
+                    onClick={this.handleClick.bind(this, this.props.location, '/stakeholders')}
+                    key={4}
+                    primaryText="Stakeholders"
+                  />
+                ]}
+              />
+              <ListItem
+                leftIcon={<CommunicationContactMail />}
+                primaryText="Outreach"
+                primaryTogglesNestedList={true}
+                nestedItems={[
+                  <ListItem
+                    onClick={this.handleClick.bind(this, this.props.location, '/presentations')}
+                    key={1}
+                    primaryText="Presentations"
+                  />,
+                  <ListItem
+                    onClick={this.handleClick.bind(this, this.props.location, '/videos')}
+                    key={2}
+                    primaryText="Videos"
+                  />,
+                  <ListItem
+                    onClick={this.handleClick.bind(this, this.props.location, '/materials')}
+                    key={3}
+                    primaryText="Materials"
                   />
                 ]}
               />
               <ListItem
                 leftIcon={<SocialGroup />}
-                primaryText="Partners"
-                onClick={this.handleClick.bind(this, this.props.location, '/partners')}
-              />
-              <ListItem
-                leftIcon={<ActionDescription />}
-                primaryText="Outreach"
-                onClick={this.handleClick.bind(this, this.props.location, '/outreach')}
+                primaryText="Results"
+                onClick={this.handleClick.bind(this, this.props.location, '/results')}
               />
               <ListItem
                 leftIcon={<NotificationSync />}
                 primaryText="Cooperation"
                 onClick={this.handleClick.bind(this, this.props.location, '/cooperation')}
-              />
-              <ListItem
-                leftIcon={<CommunicationContactMail />}
-                primaryText="Contact"
-                onClick={this.handleClick.bind(this, this.props.location, '/contact')}
               />
               <ListItem
                 leftIcon={<ActionBookmarkBorder />}
@@ -249,40 +316,49 @@ const AppToolbar = React.createClass({
           style={{position: 'fixed', width:width+'px',height: appBar.height+'px', backgroundColor:'#FFF', boxShadow: 'rgba(0, 0, 0, 0.66) 0px 1px 6px, rgba(0, 0, 0, 0.74) 0px 1px 4px', zIndex: 2000}}
           iconStyleLeft={{margin:'auto'}}
         >
-          <Grid style={{margin:'auto'}}>
-            <Row>
-              <Col md={2} xs={2}>
-                <FlatButton labelStyle={styles.textMenu} onClick={this.handleClick.bind(this, this.props.location, '/')} label="HOME" />
-              </Col>
-              <Col md={2} xs={2}>
-                <FlatButton labelStyle={styles.textMenu} onTouchTap={this.handleOpenMenu} label="Project" />
-                <IconMenu
-                  iconButtonElement={<IconButton iconStyle={styles.smallIcon} style={styles.small} ><ActionHome /></IconButton>}
-                  open={this.state.openMenu}
-                  onRequestChange={this.handleOnRequestChange}
-                >
-                  <MenuItem style={styles.textMenu} onClick={this.handleClickMenuItem.bind(this, 'introduction')} primaryText="Introduction" />
-                  <MenuItem style={styles.textMenu} onClick={this.handleClickMenuItem.bind(this, 'background')} primaryText="Background" />
-                  <MenuItem style={styles.textMenu} onClick={this.handleClickMenuItem.bind(this, 'impacts')} primaryText="Impacts" />
-                  <MenuItem style={styles.textMenu} onClick={this.handleClickMenuItem.bind(this, 'objective')} primaryText="Objective" />
-                  <MenuItem style={styles.textMenu} onClick={this.handleClickMenuItem.bind(this, '/partners')} primaryText="Partners" />
-                  <MenuItem style={styles.textMenu} onClick={this.handleClickMenuItem.bind(this, 'partecipate')} primaryText="Partecipate" />
-                </IconMenu>
-              </Col>
-              <Col md={2} xs={2}>
-                <FlatButton labelStyle={styles.textMenu} onClick={this.handleClick.bind(this, this.props.location, '/partners')} label="Partners" />
-              </Col>
-              <Col md={2} xs={2}>
-                <FlatButton labelStyle={styles.textMenu} onClick={this.handleClick.bind(this, this.props.location, '/outreach')} label="Outreach" />
-              </Col>
-              <Col md={2} xs={2}>
-                <FlatButton labelStyle={styles.textMenu} onClick={this.handleClick.bind(this, this.props.location, '/cooperation')} label="Cooperation" />
-              </Col>
-              <Col md={2} xs={2}>
-                <FlatButton labelStyle={styles.textMenu} onClick={this.handleClick.bind(this, this.props.location, '/contact')} label="Contact" />
-              </Col>
-            </Row>
-          </Grid>
+          <div style={{display:'table', height:'100%'}}>
+            <div style={{display:'table-cell', verticalAlign:'middle'}}>
+              <FlatButton labelStyle={styles.textMenu} onClick={this.handleClick.bind(this, this.props.location, '/')} label="HOME" />
+              <IconMenu
+                iconButtonElement={<IconButton iconStyle={styles.smallIcon} style={styles.small} ><ActionHome /></IconButton>}
+                open={this.state.openMenu}
+                onRequestChange={this.handleOnRequestChange}
+              >
+                <MenuItem style={styles.textMenu} onClick={this.handleClickMenuItem.bind(this, 'introduction')} primaryText="Introduction" />
+                <MenuItem style={styles.textMenu} onClick={this.handleClickMenuItem.bind(this, 'background')} primaryText="Background" />
+                <MenuItem style={styles.textMenu} onClick={this.handleClickMenuItem.bind(this, 'impacts')} primaryText="Impacts" />
+                <MenuItem style={styles.textMenu} onClick={this.handleClickMenuItem.bind(this, 'objective')} primaryText="Objective" />
+                <MenuItem style={styles.textMenu} onClick={this.handleClick.bind(this, this.props.location, '/governance')} primaryText="Governance" />
+                <MenuItem style={styles.textMenu} onClick={this.handleClick.bind(this, this.props.location, '/workingpackages')} primaryText="Working packages" />
+                <MenuItem style={styles.textMenu} onClick={this.handleClick.bind(this, this.props.location, '/casestudy')} primaryText="Case study" />
+              </IconMenu>
+              <FlatButton labelStyle={styles.textMenu} onTouchTap={this.handleOpenMenu} label="Project" />
+              <IconMenu
+                iconButtonElement={<IconButton iconStyle={styles.smallIcon} style={styles.small} ><ActionHome /></IconButton>}
+                open={this.state.openMenuTeam}
+                onRequestChange={this.handleOnRequestChangeTeam}
+              >
+                <MenuItem style={styles.textMenu} onClick={this.handleClickMenuItem.bind(this, '/partners')} primaryText="Partners" />
+                <MenuItem style={styles.textMenu} onClick={this.handleClick.bind(this, this.props.location, '/people')} primaryText="People" />
+                <MenuItem style={styles.textMenu} onClick={this.handleClick.bind(this, this.props.location, '/advisoryboard')} primaryText="Advisory board" />
+                <MenuItem style={styles.textMenu} onClick={this.handleClick.bind(this, this.props.location, '/stakeholders')} primaryText="Stakeholders" />
+              </IconMenu>
+              <FlatButton labelStyle={styles.textMenu} onTouchTap={this.handleOpenMenuTeam} label="Team" />
+              <IconMenu
+                iconButtonElement={<IconButton iconStyle={styles.smallIcon} style={styles.small} ><ActionHome /></IconButton>}
+                open={this.state.openMenuOutreach}
+                onRequestChange={this.handleOnRequestChangeOutreach}
+              >
+                <MenuItem style={styles.textMenu} onClick={this.handleClick.bind(this, this.props.location, '/presentations')} primaryText="Presentations" />
+                <MenuItem style={styles.textMenu} onClick={this.handleClick.bind(this, this.props.location, '/videos')} primaryText="Videos" />
+                <MenuItem style={styles.textMenu} onClick={this.handleClick.bind(this, this.props.location, '/materials')} primaryText="Materials" />
+              </IconMenu>
+              <FlatButton labelStyle={styles.textMenu} onTouchTap={this.handleOpenMenuOutreach} label="Outreach" />
+              <FlatButton labelStyle={styles.textMenu} onClick={this.handleClick.bind(this, this.props.location, '/results')} label="Results" />
+              <FlatButton labelStyle={styles.textMenu} onClick={this.handleClick.bind(this, this.props.location, '/cooperation')} label="Cooperation" />
+              <Button onTouchTap={this.handleClick.bind(this, this.props.location, '/links')} style={{backgroundImage:'none',border:'0'}}><Glyphicon glyph="link" /></Button>
+            </div>
+          </div>
         </AppBar>
       )
     }

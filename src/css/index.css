@@ -29,6 +29,7 @@ body {
   color: #ffbc00;
 }
 .cookie-banner .button-close {
+  margin-top: 10px;
   background-color: grey;
   font-weight: bold;
 }

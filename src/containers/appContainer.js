@@ -101,7 +101,7 @@ const AppContainer = React.createClass({
             onAccept={() => {}}
             disableStyle={true}
             dismissOnScroll={false}
-            link={{msg: <p>Click here for more information.</p>, url: 'http://ec.europa.eu/cookies/index_en.htm'}}
+            link={{msg: ' Click here for more information.', url: 'http://ec.europa.eu/cookies/index_en.htm'}}
             cookie='user-has-accepted-cookies'
             className='cookie-banner'
           />

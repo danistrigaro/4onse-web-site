@@ -38,3 +38,8 @@
   width: auto;
   border-radius: 0px;
 }
+
+/* home */
+.grid-home figure{
+  padding: 10px;
+}

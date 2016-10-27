@@ -1,7 +1,5 @@
 // react
 import React from 'react';
-// css
-import '../css/App.css';
 //components
 import AppToolbar from '../components/appToolbar.js';
 import AppFooter from '../components/appFooter';
@@ -9,6 +7,8 @@ import AppFooter from '../components/appFooter';
 import RefreshIndicator from 'material-ui/RefreshIndicator';
 // cookie
 import CookieBanner from 'react-cookie-banner';
+// css
+import '../css/App.css';
 
 const AppContainer = React.createClass({
   getInitialState () {

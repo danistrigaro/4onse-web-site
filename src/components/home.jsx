@@ -98,20 +98,18 @@ const Home = React.createClass({
             </Carousel.Caption>
           </Carousel.Item>
         </Carousel>
-        <Grid style={{width:this.props.size.width+'px', height: heightRow, display: 'table',paddingTop:'10px', paddingBottom:'10px'}}>
+        <Grid className='grid-home' style={{width:this.props.size.width+'px', height: heightRow, display: 'table',paddingTop:'10px', paddingBottom:'10px'}}>
           <Row style={{verticalAlign: 'middle', display:'table-cell'}}>
             <Col md={3} sm={3}>
-              <div>
-                <figure>
-                  <img src={openSoftware} alt="Team Member" />
-                  <figcaption style={{}}>
-                    <br/>
-                    <strong>IstSOS</strong>
-                    <br/>
-                    Open SOftware
-                  </figcaption>
-                </figure>
-              </div>
+              <figure>
+                <img src={openSoftware} alt="Team Member" />
+                <figcaption style={{}}>
+                  <br/>
+                  <strong>IstSOS</strong>
+                  <br/>
+                  Open SOftware
+                </figcaption>
+              </figure>
             </Col>
             <Col md={3} sm={3}>
               <div>

@@ -9,7 +9,11 @@ var scrollIntoView = require('scroll-into-view')
 
 const Project = React.createClass({
   componentDidMount () {
-    scrollIntoView(document.getElementById(this.props.params.value));
+    if (this.props.params.value==='introduction') {
+      scrollIntoView(document.getElementById('app'));
+    } else {
+      scrollIntoView(document.getElementById(this.props.params.value));
+    }
   },
   render () {
     return (
